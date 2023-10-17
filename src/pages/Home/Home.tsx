@@ -1,39 +1,30 @@
-import React, { useState } from "react";
-import TextField from "@mui/material/TextField";
-import { Button, Container, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
-import Body from "../../template/Body";
-import {
-  BUDGETOPTIONS,
-  INTERESTS,
-  PLACES,
-  STAGESOPTIONS,
-  TRAVELSIZE,
-  WHENOPTIONS,
-} from "../../utils/constants";
-import MultiSelect from "../../component/Dropdown/MultiSelect/MultiSelect";
-import Dropdown from "../../component/Dropdown/SingleSelect/Dropdown";
-import { TripDetails } from "../../Model/TripDetails";
-import modalStyle from "./HomeStyle";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import { Button, Container, Typography } from '@mui/material';
+import Box from '@mui/material/Box';
+import Modal from '@mui/material/Modal';
+import Body from '../../template/Body';
+import { BUDGETOPTIONS, INTERESTS, PLACES, STAGESOPTIONS, TRAVELSIZE, WHENOPTIONS } from '../../utils/constants';
+import MultiSelect from '../../component/Dropdown/MultiSelect/MultiSelect';
+import Dropdown from '../../component/Dropdown/SingleSelect/Dropdown';
+import { TripDetails } from '../../Model/TripDetails';
+import modalStyle from './HomeStyle';
+import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
-  const [selectedDestinations, setSelectedDestinations] = useState<string[]>(
-    [],
-  );
+  const [selectedDestinations, setSelectedDestinations] = useState<string[]>([]);
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [travellersCount, setTravellersCount] = useState<number>(0);
   const [budget, setBudget] = useState<number>(0);
   const [showPopup, setShowPop] = useState<boolean>(false);
 
-  const [name, setName] = useState<string>("");
-  const [emailId, setEmailId] = useState<string>("");
-  const [phoneNumber, setPhoneNumber] = useState<string>("");
-  const [duration, setDuration] = useState<string>("");
-  const [date, setDate] = useState<string>("");
-  const [stageOfTrip, setStageOfTrip] = useState<string>("");
+  const [name, setName] = useState<string>('');
+  const [emailId, setEmailId] = useState<string>('');
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [duration, setDuration] = useState<string>('');
+  const [date, setDate] = useState<string>('');
+  const [stageOfTrip, setStageOfTrip] = useState<string>('');
 
   const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
     const value: any = event.target.value;
@@ -42,7 +33,7 @@ const Home: React.FC = () => {
 
   const click = () => {
     if (isValid(name, emailId, phoneNumber)) {
-      alert("Please enter required details properly");
+      alert('Please enter required details properly');
       return;
     }
 
@@ -59,7 +50,7 @@ const Home: React.FC = () => {
       stageOfTrip,
     };
     saveToLocalStorage(tripDetails);
-    navigate("/thankyou");
+    navigate('/thankyou');
   };
 
   const openPopup = () => {
@@ -68,25 +59,22 @@ const Home: React.FC = () => {
 
   return (
     <Body>
-      <div style={{ marginBlockEnd: "17%" }}></div>
+      <div style={{ marginBlockEnd: '17%' }}></div>
       <Container
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          marginBlockEnd: "1%",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginBlockEnd: '1%',
         }}
       >
-        <Typography variant="h4">
-          We Care, So You Can Travel Carefree
-        </Typography>
+        <Typography variant="h4">We Care, So You Can Travel Carefree</Typography>
         <Typography variant="h5">
-          Let our experts plan your private, tailor-made and secure tour in 70+
-          inspiring destinations.
+          Let our experts plan your private, tailor-made and secure tour in 70+ inspiring destinations.
         </Typography>
       </Container>
-      <Container style={{ display: "flex" }}>
-        <div style={{ background: "white", display: "flex" }}>
+      <Container style={{ display: 'flex' }}>
+        <div style={{ background: 'white', display: 'flex' }}>
           <MultiSelect
             options={PLACES}
             placeHolder="Where do you want to go?"
@@ -94,38 +82,30 @@ const Home: React.FC = () => {
             onChangeHandler={handleChange}
           />
         </div>
-        <div style={{ background: "white", display: "flex" }}>
+        <div style={{ background: 'white', display: 'flex' }}>
           <MultiSelect
             options={INTERESTS}
             placeHolder="Your Interests?"
             selectedItems={selectedInterests}
-            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-              setSelectedInterests(e.target.value as string[])
-            }
+            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setSelectedInterests(e.target.value as string[])}
           />
         </div>
-        <div style={{ background: "white", display: "flex" }}>
+        <div style={{ background: 'white', display: 'flex' }}>
           <Dropdown
             options={TRAVELSIZE}
             placeHolder="No. of travelers"
-            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-              setTravellersCount(e.target.value as number)
-            }
+            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setTravellersCount(e.target.value as number)}
           />
         </div>
-        <div style={{ background: "white", display: "flex" }}>
+        <div style={{ background: 'white', display: 'flex' }}>
           <Dropdown
             options={BUDGETOPTIONS}
             placeHolder="Budget Per Person"
-            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-              setBudget(e.target.value as number)
-            }
+            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setBudget(e.target.value as number)}
           />
         </div>
       </Container>
-      <Container
-        style={{ margin: "10px", display: "flex", justifyContent: "center" }}
-      >
+      <Container style={{ margin: '10px', display: 'flex', justifyContent: 'center' }}>
         <Button variant="contained" onClick={openPopup}>
           Create My Trip Now
         </Button>
@@ -146,7 +126,7 @@ const Home: React.FC = () => {
               We need a bit more info to create your itinerary:
             </Typography>
           </div>
-          <Container style={{ padding: "0px", marginTop: "10px" }}>
+          <Container style={{ padding: '0px', marginTop: '10px' }}>
             <TextField
               fullWidth
               required
@@ -156,7 +136,7 @@ const Home: React.FC = () => {
               onChange={(e) => setName(e.target.value)}
             />
           </Container>
-          <Container style={{ padding: "0px", marginTop: "10px" }}>
+          <Container style={{ padding: '0px', marginTop: '10px' }}>
             <TextField
               fullWidth
               required
@@ -167,7 +147,7 @@ const Home: React.FC = () => {
             />
           </Container>
 
-          <Container style={{ padding: "0px", marginTop: "10px" }}>
+          <Container style={{ padding: '0px', marginTop: '10px' }}>
             <TextField
               fullWidth
               required
@@ -180,47 +160,39 @@ const Home: React.FC = () => {
 
           <Container
             style={{
-              padding: "0px",
-              marginTop: "10px",
-              display: "flex",
-              justifyContent: "space-between",
+              padding: '0px',
+              marginTop: '10px',
+              display: 'flex',
+              justifyContent: 'space-between',
             }}
           >
-            <TextField
-              placeholder="Trip Duration (Days)"
-              value={duration}
-              onChange={(e) => setDuration(e.target.value)}
-            />
+            <TextField placeholder="Trip Duration (Days)" value={duration} onChange={(e) => setDuration(e.target.value)} />
             <Dropdown
               options={WHENOPTIONS}
               placeHolder="When"
-              onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-                setDate(e.target.value as string)
-              }
+              onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setDate(e.target.value as string)}
             />
           </Container>
 
           <Container
             style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "10px",
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '10px',
             }}
           >
             <Dropdown
               options={STAGESOPTIONS}
               placeHolder="What stage of planning are you in?"
-              onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-                setStageOfTrip(e.target.value as string)
-              }
+              onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setStageOfTrip(e.target.value as string)}
             />
           </Container>
 
           <Container
             style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "10px",
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '10px',
             }}
           >
             <Button variant="contained" onClick={click}>
@@ -234,20 +206,15 @@ const Home: React.FC = () => {
 };
 
 function saveToLocalStorage(tripDetails: TripDetails) {
-  const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+  const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
   bookings.push(tripDetails);
-  localStorage.setItem("bookings", JSON.stringify(bookings));
+  localStorage.setItem('bookings', JSON.stringify(bookings));
 }
 
 function isValid(name: string, emailId: string, phoneNumber: string) {
   const validEmailIdRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const mobileNumberRegex =
-    /^(?:\+\d{1,3}\s?)?(?:\(\d{1,4}\))?(?:[-.\s]?\d{1,4})+$/;
-  return (
-    name.length == 0 ||
-    !validEmailIdRegex.test(emailId) ||
-    !mobileNumberRegex.test(phoneNumber)
-  );
+  const mobileNumberRegex = /^(?:\+\d{1,3}\s?)?(?:\(\d{1,4}\))?(?:[-.\s]?\d{1,4})+$/;
+  return name.length == 0 || !validEmailIdRegex.test(emailId) || !mobileNumberRegex.test(phoneNumber);
 }
 
 export default Home;

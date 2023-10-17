@@ -1,10 +1,4 @@
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  OutlinedInput,
-  Select,
-} from "@mui/material";
+import { FormControl, InputLabel, MenuItem, OutlinedInput, Select } from '@mui/material';
 
 interface DropdownProps {
   options: string[];
@@ -12,19 +6,12 @@ interface DropdownProps {
   onChangeHandler: any;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({
-  options,
-  placeHolder,
-  onChangeHandler,
-}) => {
+const Dropdown: React.FC<DropdownProps> = ({ options, placeHolder, onChangeHandler }) => {
   return (
     <FormControl sx={{ m: 0, width: 300 }}>
       <InputLabel>{placeHolder}</InputLabel>
 
-      <Select
-        onChange={onChangeHandler}
-        input={<OutlinedInput label={placeHolder} />}
-      >
+      <Select onChange={onChangeHandler} input={<OutlinedInput label={placeHolder} />}>
         {options.map((option: string) => (
           <MenuItem key={option} value={option}>
             {option}
