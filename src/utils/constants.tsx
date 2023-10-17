@@ -84,7 +84,7 @@ const POP_UP_LABEL_3: string = 'Phone Number';
 const TRIP_DURATION_PLACE_HOLDER: string = 'Trip Duration (Days)';
 const TIME_PLACE_HOLDER = 'When';
 const STAGE_PALCEHOLDER = 'What stage of planning are you in?';
-const SUBMIT_BUTTON = 'Button';
+const SUBMIT_BUTTON = 'Submit';
 
 export {
   PLACES,
