@@ -14,10 +14,10 @@ function AdminLogin() {
 
   const loginHandler = () => {
     if (username === "admin" && password == "1234") {
-    setDisplayTrips(true);
-    const tripDetails = getFromLocalStorage();
-    setTrips(JSON.parse(tripDetails));
-    return;
+      setDisplayTrips(true);
+      const tripDetails = getFromLocalStorage();
+      setTrips(JSON.parse(tripDetails));
+      return;
     }
     alert("Invalid Credentials");
   };
