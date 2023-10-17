@@ -15,39 +15,14 @@ import {
 import { Navigate } from "react-router-dom";
 import MultiSelect from "../../component/Dropdown/MultiSelect/MultiSelect";
 import Dropdown from "../../component/Dropdown/SingleSelect/Dropdown";
-
-export interface TripDetails {
-  destinations: string[];
-  interests: string[];
-  travellersCount: number;
-  budget: number;
-  name: string;
-  emailId: string;
-  phoneNumber: string;
-  duration: string;
-  date: string;
-  stageOfTrip: string;
-}
-
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 600,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
+import { TripDetails } from "../../Model/TripDetails";
+import modalStyle from "./HomeStyle";
 
 const Home: React.FC = () => {
-  const initPlace: string[] = [];
-
-  const [selectedDestinations, setSelectedDestinations] =
-    useState<string[]>(initPlace);
-  const [selectedInterests, setSelectedInterests] =
-    useState<string[]>(initPlace);
+  const [selectedDestinations, setSelectedDestinations] = useState<string[]>(
+    [],
+  );
+  const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
   const [travellersCount, setTravellersCount] = useState<number>(0);
   const [budget, setBudget] = useState<number>(0);
   const [showPopup, setShowPop] = useState<boolean>(false);
@@ -59,9 +34,9 @@ const Home: React.FC = () => {
   const [date, setDate] = useState<string>("");
   const [stageOfTrip, setStageOfTrip] = useState<string>("");
 
-  const handle = (e: React.ChangeEvent<{ value: unknown }>) => {
-    const a: any = e.target.value;
-    setSelectedDestinations(a);
+  const handleChange = (event: React.ChangeEvent<{ value: unknown }>) => {
+    const value: any = event.target.value;
+    setSelectedDestinations(value);
   };
 
   const click = () => {
@@ -77,10 +52,7 @@ const Home: React.FC = () => {
       date,
       stageOfTrip,
     };
-
-    const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
-    bookings.push(tripDetails);
-    localStorage.setItem("bookings", JSON.stringify(bookings));
+    saveToLocalStorage(tripDetails);
   };
 
   const openPopup = () => {
@@ -94,7 +66,7 @@ const Home: React.FC = () => {
           options={PLACES}
           placeHolder="Where do you want to go?"
           selectedItems={selectedDestinations}
-          onChangeHandler={handle}
+          onChangeHandler={handleChange}
         />
         <MultiSelect
           options={INTERESTS}
@@ -131,7 +103,7 @@ const Home: React.FC = () => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <Box sx={modalStyle}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             Almost There!
           </Typography>
@@ -205,5 +177,11 @@ const Home: React.FC = () => {
     </Body>
   );
 };
+
+function saveToLocalStorage(tripDetails: TripDetails) {
+  const bookings = JSON.parse(localStorage.getItem("bookings") || "[]");
+  bookings.push(tripDetails);
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+}
 
 export default Home;

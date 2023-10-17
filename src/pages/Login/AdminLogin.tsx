@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import Body from "../../template/Body";
-import { TripDetails } from "../Home/Home";
+import { TripDetails } from "../../Model/TripDetails";
 
 function AdminLogin() {
   const [username, setUsername] = useState("");
