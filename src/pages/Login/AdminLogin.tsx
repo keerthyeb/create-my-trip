@@ -19,9 +19,13 @@ function AdminLogin() {
   const [displayTrips, setDisplayTrips] = useState(false);
 
   const loginHandler = () => {
-    setDisplayTrips(true);
-    const tripDetails = getFromLocalStorage();
-    setTrips(JSON.parse(tripDetails));
+    if (username === "admin" && password == "1234") {
+      setDisplayTrips(true);
+      const tripDetails = getFromLocalStorage();
+      setTrips(JSON.parse(tripDetails));
+      return;
+    }
+    alert("Invalid Credentials");
   };
 
   return (
