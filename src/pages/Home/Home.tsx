@@ -7,8 +7,9 @@ import MultiSelect from '../../component/MultiSelect/MultiSelect';
 import Dropdown from '../../component/Dropdown/Dropdown';
 import Body from '../../template/Body';
 import { BUDGETOPTIONS, INTERESTS, PLACES, STAGESOPTIONS, TRAVELSIZE, WHENOPTIONS } from '../../utils/constants';
+import { Navigate } from 'react-router-dom';
 
-interface TripDetails {
+export interface TripDetails {
   destinations: string[];
   interests: string[];
   travellersCount: number;
@@ -67,6 +68,10 @@ const Home: React.FC = () => {
       date,
       stageOfTrip,
     };
+    
+        const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+        bookings.push(tripDetails);
+        localStorage.setItem('bookings', JSON.stringify(bookings));
   };
 
   const openPopup = () => {
