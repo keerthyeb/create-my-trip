@@ -59,4 +59,54 @@ const STAGESOPTIONS: string[] = [
   'I want to book a trip',
 ];
 
-export { PLACES, INTERESTS, TRAVELSIZE, BUDGETOPTIONS, WHENOPTIONS, STAGESOPTIONS };
+const HEADER_CONTENT_1: string = 'We Care, So You Can Travel Carefree';
+
+const HEADER_CONTENT_2: string = 'Let our experts plan your private, tailor-made and secure tour in 70+ inspiring destinations.';
+
+const CREATE_MY_TRIP_NOW: string = 'Create My Trip Now';
+
+const PLACEHOLDER_1: string = 'Where do you want to go?';
+
+const PLACEHOLDER_2: string = 'Your Interests?';
+
+const PLACEHOLDER_3: string = 'No. of travelers';
+
+const PLACEHOLDER_4: string = 'Budget Per Person';
+
+const POP_UP_HEADING_1: string = 'Almost There!';
+
+const POP_UP_HEADING_2: string = 'We need a bit more info to create your itinerary:';
+
+const POP_UP_LABEL_1: string = 'Full Name';
+const POP_UP_LABEL_2: string = 'Email';
+const POP_UP_LABEL_3: string = 'Phone Number';
+
+const TRIP_DURATION_PLACE_HOLDER: string = 'Trip Duration (Days)';
+const TIME_PLACE_HOLDER = 'When';
+const STAGE_PALCEHOLDER = 'What stage of planning are you in?';
+const SUBMIT_BUTTON = 'Button';
+
+export {
+  PLACES,
+  INTERESTS,
+  TRAVELSIZE,
+  PLACEHOLDER_1,
+  PLACEHOLDER_2,
+  PLACEHOLDER_3,
+  PLACEHOLDER_4,
+  POP_UP_HEADING_1,
+  POP_UP_HEADING_2,
+  TRIP_DURATION_PLACE_HOLDER,
+  TIME_PLACE_HOLDER,
+  POP_UP_LABEL_1,
+  POP_UP_LABEL_2,
+  POP_UP_LABEL_3,
+  BUDGETOPTIONS,
+  WHENOPTIONS,
+  STAGESOPTIONS,
+  HEADER_CONTENT_1,
+  HEADER_CONTENT_2,
+  CREATE_MY_TRIP_NOW,
+  STAGE_PALCEHOLDER,
+  SUBMIT_BUTTON,
+};

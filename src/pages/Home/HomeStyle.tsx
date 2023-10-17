@@ -15,4 +15,57 @@ const modalStyle = {
   p: 4,
 };
 
-export default modalStyle;
+const headerDiv = {
+  marginTop: '17%',
+};
+
+const headerStyles: any = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  marginBlockEnd: '1%',
+};
+
+const displayFlex = {
+  display: 'flex',
+};
+
+const whiteBackground = {
+  background: 'white',
+};
+
+const popUpFieldStyle = {
+  padding: '0px',
+  marginTop: '10px',
+};
+
+const tripDurationStyle = {
+  padding: '0px',
+  marginTop: '10px',
+  display: 'flex',
+  justifyContent: 'space-between',
+};
+
+const stageOptionStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: '10px',
+};
+
+const submitButton = {
+  margin: '10px',
+  display: 'flex',
+  justifyContent: 'center',
+};
+
+export {
+  modalStyle,
+  submitButton,
+  popUpFieldStyle,
+  tripDurationStyle,
+  displayFlex,
+  headerDiv,
+  headerStyles,
+  whiteBackground,
+  stageOptionStyle,
+};

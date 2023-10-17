@@ -4,12 +4,47 @@ import { Button, Container, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Body from '../../template/Body';
-import { BUDGETOPTIONS, INTERESTS, PLACES, STAGESOPTIONS, TRAVELSIZE, WHENOPTIONS } from '../../utils/constants';
+import {
+  BUDGETOPTIONS,
+  HEADER_CONTENT_1,
+  HEADER_CONTENT_2,
+  INTERESTS,
+  PLACES,
+  STAGESOPTIONS,
+  TRAVELSIZE,
+  WHENOPTIONS,
+  PLACEHOLDER_1,
+  PLACEHOLDER_2,
+  PLACEHOLDER_3,
+  PLACEHOLDER_4,
+  POP_UP_HEADING_1,
+  POP_UP_HEADING_2,
+  POP_UP_LABEL_1,
+  POP_UP_LABEL_2,
+  POP_UP_LABEL_3,
+  TRIP_DURATION_PLACE_HOLDER,
+  TIME_PLACE_HOLDER,
+  STAGE_PALCEHOLDER,
+  SUBMIT_BUTTON,
+  CREATE_MY_TRIP_NOW,
+} from '../../utils/constants';
 import MultiSelect from '../../component/Dropdown/MultiSelect/MultiSelect';
 import Dropdown from '../../component/Dropdown/SingleSelect/Dropdown';
 import { TripDetails } from '../../Model/TripDetails';
-import modalStyle from './HomeStyle';
+import {
+  modalStyle,
+  displayFlex,
+  headerDiv,
+  headerStyles,
+  whiteBackground,
+  popUpFieldStyle,
+  tripDurationStyle,
+  stageOptionStyle,
+  submitButton,
+} from './HomeStyle';
 import { useNavigate } from 'react-router-dom';
+import { isValid } from '../../utils/helper';
+import { saveTripDetails } from '../../service/booking';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -49,7 +84,8 @@ const Home: React.FC = () => {
       date,
       stageOfTrip,
     };
-    saveToLocalStorage(tripDetails);
+
+    saveTripDetails(tripDetails);
     navigate('/thankyou');
   };
 
@@ -57,60 +93,70 @@ const Home: React.FC = () => {
     setShowPop(true);
   };
 
-  return (
-    <Body>
-      <div style={{ marginBlockEnd: '17%' }}></div>
-      <Container
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          marginBlockEnd: '1%',
-        }}
-      >
-        <Typography variant="h4">We Care, So You Can Travel Carefree</Typography>
-        <Typography variant="h5">
-          Let our experts plan your private, tailor-made and secure tour in 70+ inspiring destinations.
-        </Typography>
+  function renderHeaderDiv() {
+    return <div style={headerDiv}></div>;
+  }
+
+  function renderHeaderContent() {
+    return (
+      <Container style={headerStyles}>
+        <Typography variant="h4">{HEADER_CONTENT_1}</Typography>
+        <Typography variant="h5">{HEADER_CONTENT_2}</Typography>
       </Container>
-      <Container style={{ display: 'flex' }}>
-        <div style={{ background: 'white', display: 'flex' }}>
+    );
+  }
+
+  function OnChangeHandler() {
+    return (
+      e: React.ChangeEvent<{
+        value: unknown;
+      }>,
+    ) => setSelectedInterests(e.target.value as string[]);
+  }
+
+  function renderOptions() {
+    return (
+      <Container style={displayFlex}>
+        <div style={whiteBackground}>
           <MultiSelect
             options={PLACES}
-            placeHolder="Where do you want to go?"
+            placeHolder={PLACEHOLDER_1}
             selectedItems={selectedDestinations}
             onChangeHandler={handleChange}
           />
         </div>
-        <div style={{ background: 'white', display: 'flex' }}>
+        <div style={whiteBackground}>
           <MultiSelect
             options={INTERESTS}
-            placeHolder="Your Interests?"
+            placeHolder={PLACEHOLDER_2}
             selectedItems={selectedInterests}
-            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setSelectedInterests(e.target.value as string[])}
+            onChangeHandler={OnChangeHandler()}
           />
         </div>
-        <div style={{ background: 'white', display: 'flex' }}>
+        <div style={whiteBackground}>
           <Dropdown
             options={TRAVELSIZE}
-            placeHolder="No. of travelers"
-            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setTravellersCount(e.target.value as number)}
+            placeHolder={PLACEHOLDER_3}
+            onChangeHandler={(
+              e: React.ChangeEvent<{
+                value: unknown;
+              }>,
+            ) => setTravellersCount(e.target.value as number)}
           />
         </div>
-        <div style={{ background: 'white', display: 'flex' }}>
+        <div style={whiteBackground}>
           <Dropdown
             options={BUDGETOPTIONS}
-            placeHolder="Budget Per Person"
+            placeHolder={PLACEHOLDER_4}
             onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setBudget(e.target.value as number)}
           />
         </div>
       </Container>
-      <Container style={{ margin: '10px', display: 'flex', justifyContent: 'center' }}>
-        <Button variant="contained" onClick={openPopup}>
-          Create My Trip Now
-        </Button>
-      </Container>
+    );
+  }
 
+  function renderModal() {
+    return (
       <Modal
         open={showPopup}
         onClose={() => setShowPop(false)}
@@ -119,102 +165,87 @@ const Home: React.FC = () => {
       >
         <Box sx={modalStyle}>
           <div>
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-              Almost There!
+            <Typography id="modal-title" variant="h6" component="h2">
+              {POP_UP_HEADING_1}
             </Typography>
-            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-              We need a bit more info to create your itinerary:
+            <Typography id="modal-description" sx={{ mt: 2 }}>
+              {POP_UP_HEADING_2}
             </Typography>
           </div>
-          <Container style={{ padding: '0px', marginTop: '10px' }}>
+          <Container style={popUpFieldStyle}>
             <TextField
               fullWidth
               required
-              id="outlined-required"
-              label="Full Name"
+              id="name"
+              label={POP_UP_LABEL_1}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </Container>
-          <Container style={{ padding: '0px', marginTop: '10px' }}>
+          <Container style={popUpFieldStyle}>
             <TextField
               fullWidth
               required
-              id="outlined-required"
-              label="Email"
+              id="email"
+              label={POP_UP_LABEL_2}
               value={emailId}
               onChange={(e) => setEmailId(e.target.value)}
             />
           </Container>
-
-          <Container style={{ padding: '0px', marginTop: '10px' }}>
+          <Container style={popUpFieldStyle}>
             <TextField
               fullWidth
               required
-              id="outlined-required"
-              label="Phone Number"
+              id="email"
+              label={POP_UP_LABEL_3}
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </Container>
-
-          <Container
-            style={{
-              padding: '0px',
-              marginTop: '10px',
-              display: 'flex',
-              justifyContent: 'space-between',
-            }}
-          >
-            <TextField placeholder="Trip Duration (Days)" value={duration} onChange={(e) => setDuration(e.target.value)} />
+          <Container style={tripDurationStyle}>
+            <TextField placeholder={TRIP_DURATION_PLACE_HOLDER} value={duration} onChange={(e) => setDuration(e.target.value)} />
             <Dropdown
               options={WHENOPTIONS}
-              placeHolder="When"
+              placeHolder={TIME_PLACE_HOLDER}
               onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setDate(e.target.value as string)}
             />
           </Container>
-
-          <Container
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '10px',
-            }}
-          >
+          <Container style={stageOptionStyle}>
             <Dropdown
               options={STAGESOPTIONS}
-              placeHolder="What stage of planning are you in?"
+              placeHolder={STAGE_PALCEHOLDER}
               onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setStageOfTrip(e.target.value as string)}
             />
           </Container>
-
-          <Container
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '10px',
-            }}
-          >
+          <Container style={stageOptionStyle}>
             <Button variant="contained" onClick={click}>
-              Submit
+              {SUBMIT_BUTTON}
             </Button>
           </Container>
         </Box>
       </Modal>
+    );
+  }
+
+  function renderCreateMyTripButton() {
+    return (
+      <Container style={submitButton}>
+        <Button variant="contained" onClick={openPopup}>
+          {CREATE_MY_TRIP_NOW}
+        </Button>
+      </Container>
+    );
+  }
+
+  return (
+    <Body>
+      {renderHeaderDiv()}
+      {renderHeaderContent()}
+      {renderOptions()}
+      {renderCreateMyTripButton()}
+      {renderModal()}
     </Body>
   );
 };
-
-function saveToLocalStorage(tripDetails: TripDetails) {
-  const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-  bookings.push(tripDetails);
-  localStorage.setItem('bookings', JSON.stringify(bookings));
-}
-
-function isValid(name: string, emailId: string, phoneNumber: string) {
-  const validEmailIdRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const mobileNumberRegex = /^(?:\+\d{1,3}\s?)?(?:\(\d{1,4}\))?(?:[-.\s]?\d{1,4})+$/;
-  return name.length == 0 || !validEmailIdRegex.test(emailId) || !mobileNumberRegex.test(phoneNumber);
-}
 
 export default Home;
