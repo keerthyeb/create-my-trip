@@ -1,17 +1,16 @@
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useState } from "react";
+import { Card, Container, Typography } from "@mui/material";
 import {
-  Card,
-  CardContent,
-  Container,
-  Divider,
-  styled,
-  Typography,
-} from "@mui/material";
+  CardContainer,
+  StyledCardContent,
+  CardTitleContainer,
+  JourneyContainer,
+  JourneyDivider,
+} from "./AdminLoginStyle";
 import Body from "../../template/Body";
 import { TripDetails } from "../../Model/TripDetails";
-
 function AdminLogin() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,8 +20,7 @@ function AdminLogin() {
 
   const loginHandler = () => {
     setDisplayTrips(true);
-    const json = localStorage.getItem("bookings") || "[]";
-    setTrips(JSON.parse(json));
+    getFromLocalStorage(setTrips);
   };
 
   return (
@@ -82,32 +80,10 @@ function AdminLogin() {
   );
 }
 
-const CardContainer = styled(Container)({
-  display: "flex",
-  flexWrap: "wrap",
-  gap: "20px",
-  justifyContent: "space-between",
-});
-const StyledCardContent = styled(CardContent)({
-  display: "flex",
-  flexDirection: "column",
-  gap: "2em",
-  width: "25%",
-});
-const CardTitleContainer = styled(Container)({
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-});
-const JourneyContainer = styled(Container)({
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  justifyContent: "space-between",
-});
-const JourneyDivider = styled(Divider)({
-  flex: 1,
-  margin: "15px 0",
-});
-
+function getFromLocalStorage(
+  setTrips: (value: ((prevState: []) => []) | []) => void,
+) {
+  const json = localStorage.getItem("bookings") || "[]";
+  setTrips(JSON.parse(json));
+}
 export default AdminLogin;
