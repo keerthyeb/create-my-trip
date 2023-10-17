@@ -2,13 +2,6 @@ import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { useState } from "react";
 import { Card, Container, Typography } from "@mui/material";
-import {
-  CardContainer,
-  StyledCardContent,
-  CardTitleContainer,
-  JourneyContainer,
-  JourneyDivider,
-} from "./AdminLoginStyle";
 import Body from "../../template/Body";
 import { TripDetails } from "../../Model/TripDetails";
 function AdminLogin() {
@@ -60,31 +53,40 @@ function AdminLogin() {
           <Typography variant="h5" mb={2}>
             Trips
           </Typography>
-          <div style={{display: "flex", flexDirection : "row", flexWrap: "wrap",  justifyContent: "space-evenly", width: "100%"}}>
+          <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", justifyContent: "space-evenly", width: "100%" }}>
             {trips.map((trip, index) => (
-              <Card style={{ minWidth: "23%", maxWidth: "23%", margin: "10px"}} key={index}>
-                <StyledCardContent>
-                  <CardTitleContainer>
-                    <div>
-                      <Typography variant="h6">{trip.name}</Typography>
-                      <Typography>{trip.emailId}</Typography>
-                      <Typography>{trip.phoneNumber.toString()}</Typography>
-                    </div>
-                  </CardTitleContainer>
-                  <JourneyContainer>
-                    <Typography variant="h5">{trip.destinations}</Typography>
-                    <JourneyDivider>{trip.date}</JourneyDivider>
-                    <Typography variant="h5">{trip.interests}</Typography>
-                  </JourneyContainer>
-                  <Container>
-                    <Typography>{trip.duration.toString()}</Typography>
-                    <Typography>{trip.stageOfTrip}</Typography>
-                  </Container>
-                  <Container>
-                    <Typography>{trip.travellersCount.toString()}</Typography>
-                    <Typography>{trip.budget}</Typography>
-                  </Container>
-                </StyledCardContent>
+              <Card style={{
+                minWidth: "23%",
+                minHeight: "45vh",
+                maxWidth: "23%",
+                margin: "10px",
+                borderRadius: "14px",
+                display: "flex",
+                boxShadow: "rgb(38, 57, 77) 0px 20px 20px -15px",
+              }} key={index}>
+                <Container style={{
+                  padding: "17px",
+                  display: "flex",
+                  justifyContent: "space-evenly",
+                  flexDirection: "column"
+                }} >
+                  <div>
+                    <Typography variant="h4">{trip.name}</Typography>
+                    <Typography>{trip.emailId}</Typography>
+                    <Typography>Mob: {trip.phoneNumber.toString()}</Typography>
+                  </div>
+                  <div>
+                    <Typography>Destinations: {trip.destinations.join(", ")}</Typography>
+                    <Typography>Interests: {trip.interests}</Typography>
+                    <Typography>Date: {trip.date}</Typography>
+                  </div>
+                  <div>
+                    <Typography>Duration: {trip.duration.toString()}</Typography>
+                    <Typography>No of People: {trip.travellersCount.toString()}</Typography>
+                    <Typography>Expected Budget: {trip.budget}</Typography>
+                    <Typography>Stage: {trip.stageOfTrip}</Typography>
+                  </div>
+                </Container>
               </Card>
             ))}
           </div>
