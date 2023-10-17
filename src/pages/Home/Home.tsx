@@ -3,8 +3,6 @@ import TextField from "@mui/material/TextField";
 import { Button, Container, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import MultiSelect from "../../component/MultiSelect/MultiSelect";
-import Dropdown from "../../component/Dropdown/Dropdown";
 import Body from "../../template/Body";
 import {
   BUDGETOPTIONS,
@@ -15,6 +13,8 @@ import {
   WHENOPTIONS,
 } from "../../utils/constants";
 import { Navigate } from "react-router-dom";
+import MultiSelect from "../../component/Dropdown/MultiSelect/MultiSelect";
+import Dropdown from "../../component/Dropdown/SingleSelect/Dropdown";
 
 export interface TripDetails {
   destinations: string[];

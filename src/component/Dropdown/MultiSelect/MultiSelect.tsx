@@ -1,8 +1,24 @@
-import { FormControl, InputLabel, MenuItem, OutlinedInput, Select } from '@mui/material';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  OutlinedInput,
+  Select,
+} from "@mui/material";
 
-const MultiSelect = (props: { options: any; placeHolder: string; selectedItems: any, onChangeHandler: any }) => {
-  const { options, placeHolder, selectedItems, onChangeHandler } = props;
+interface MultiSelectProps {
+  options: string[];
+  placeHolder: string;
+  selectedItems: string[];
+  onChangeHandler: any;
+}
 
+const MultiSelect: React.FC<MultiSelectProps> = ({
+  options,
+  placeHolder,
+  selectedItems,
+  onChangeHandler,
+}) => {
   return (
     <FormControl sx={{ m: 0, width: 300 }}>
       <InputLabel>{placeHolder}</InputLabel>
@@ -14,15 +30,12 @@ const MultiSelect = (props: { options: any; placeHolder: string; selectedItems: 
       >
         {options.map((option: string) => (
           <MenuItem key={option} value={option}>
-
             {option}
-
           </MenuItem>
         ))}
       </Select>
     </FormControl>
   );
-}
-
+};
 
 export default MultiSelect;

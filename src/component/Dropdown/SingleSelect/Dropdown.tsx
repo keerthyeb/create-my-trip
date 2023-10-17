@@ -6,12 +6,17 @@ import {
   Select,
 } from "@mui/material";
 
-const Dropdown = (props: {
-  options: any;
+interface DropdownProps {
+  options: string[];
   placeHolder: string;
   onChangeHandler: any;
+}
+
+const Dropdown: React.FC<DropdownProps> = ({
+  options,
+  placeHolder,
+  onChangeHandler,
 }) => {
-  const { options, placeHolder, onChangeHandler } = props;
   return (
     <FormControl sx={{ m: 0, width: 300 }}>
       <InputLabel>{placeHolder}</InputLabel>
