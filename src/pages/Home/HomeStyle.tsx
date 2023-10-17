@@ -3,10 +3,15 @@ const modalStyle = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 600,
+  width: 500,
+  height: 650,
   bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
+  boxShadow: 23,
+  border: "1px solid #95a1ab",
+  borderRadius: "10px",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-evenly",
   p: 4,
 };
 

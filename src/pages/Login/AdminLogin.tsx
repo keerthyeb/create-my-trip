@@ -28,22 +28,31 @@ function AdminLogin() {
     <Body>
       {!displayTrips && (
         <>
-          <TextField
-            placeholder="Username"
-            value={username}
-            onChange={(event) => setUsername(event.target.value)}
-          />
-          <TextField
-            placeholder="Password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-          <Button onClick={loginHandler}>Login</Button>
+          <div style={{ marginBlockEnd: "17%" }}></div>
+          <div style={{ margin: "5px", background: "white" }}>
+            <TextField
+              placeholder="Username"
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
+            />
+          </div>
+          <div style={{ margin: "5px", background: "white" }}>
+            <TextField
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+          <div style={{ margin: "5px" }}>
+            <Button variant="contained" onClick={loginHandler}>
+              Login
+            </Button>
+          </div>
         </>
       )}
       {displayTrips && (
         <>
-          <TextField placeholder="Search by name or emailId" />
           <Typography variant="h5" mb={2}>
             Trips
           </Typography>

@@ -12,13 +12,14 @@ import {
   TRAVELSIZE,
   WHENOPTIONS,
 } from "../../utils/constants";
-import { Navigate } from "react-router-dom";
 import MultiSelect from "../../component/Dropdown/MultiSelect/MultiSelect";
 import Dropdown from "../../component/Dropdown/SingleSelect/Dropdown";
 import { TripDetails } from "../../Model/TripDetails";
 import modalStyle from "./HomeStyle";
+import { useNavigate } from "react-router-dom";
 
 const Home: React.FC = () => {
+  const navigate = useNavigate();
   const [selectedDestinations, setSelectedDestinations] = useState<string[]>(
     [],
   );
@@ -53,6 +54,7 @@ const Home: React.FC = () => {
       stageOfTrip,
     };
     saveToLocalStorage(tripDetails);
+    navigate("/thankyou");
   };
 
   const openPopup = () => {
@@ -61,37 +63,64 @@ const Home: React.FC = () => {
 
   return (
     <Body>
-      <Container style={{ display: "flex" }}>
-        <MultiSelect
-          options={PLACES}
-          placeHolder="Where do you want to go?"
-          selectedItems={selectedDestinations}
-          onChangeHandler={handleChange}
-        />
-        <MultiSelect
-          options={INTERESTS}
-          placeHolder="Your Interests?"
-          selectedItems={selectedInterests}
-          onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-            setSelectedInterests(e.target.value as string[])
-          }
-        />
-        <Dropdown
-          options={TRAVELSIZE}
-          placeHolder="No. of travelers"
-          onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-            setTravellersCount(e.target.value as number)
-          }
-        />
-        <Dropdown
-          options={BUDGETOPTIONS}
-          placeHolder="Budget Per Person"
-          onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
-            setBudget(e.target.value as number)
-          }
-        />
+      <div style={{ marginBlockEnd: "17%" }}></div>
+      <Container
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          marginBlockEnd: "1%",
+        }}
+      >
+        <Typography variant="h4">
+          We Care, So You Can Travel Carefree
+        </Typography>
+        <Typography variant="h5">
+          Let our experts plan your private, tailor-made and secure tour in 70+
+          inspiring destinations.
+        </Typography>
       </Container>
-      <Container>
+      <Container style={{ display: "flex" }}>
+        <div style={{ background: "white", display: "flex" }}>
+          <MultiSelect
+            options={PLACES}
+            placeHolder="Where do you want to go?"
+            selectedItems={selectedDestinations}
+            onChangeHandler={handleChange}
+          />
+        </div>
+        <div style={{ background: "white", display: "flex" }}>
+          <MultiSelect
+            options={INTERESTS}
+            placeHolder="Your Interests?"
+            selectedItems={selectedInterests}
+            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
+              setSelectedInterests(e.target.value as string[])
+            }
+          />
+        </div>
+        <div style={{ background: "white", display: "flex" }}>
+          <Dropdown
+            options={TRAVELSIZE}
+            placeHolder="No. of travelers"
+            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
+              setTravellersCount(e.target.value as number)
+            }
+          />
+        </div>
+        <div style={{ background: "white", display: "flex" }}>
+          <Dropdown
+            options={BUDGETOPTIONS}
+            placeHolder="Budget Per Person"
+            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) =>
+              setBudget(e.target.value as number)
+            }
+          />
+        </div>
+      </Container>
+      <Container
+        style={{ margin: "10px", display: "flex", justifyContent: "center" }}
+      >
         <Button variant="contained" onClick={openPopup}>
           Create My Trip Now
         </Button>
@@ -99,38 +128,46 @@ const Home: React.FC = () => {
 
       <Modal
         open={showPopup}
-        onClose={click}
+        onClose={() => setShowPop(false)}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={modalStyle}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Almost There!
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            We need a bit more info to create your itinerary:
-          </Typography>
-          <Container style={{ marginTop: "10px" }}>
+          <div>
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+              Almost There!
+            </Typography>
+            <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+              We need a bit more info to create your itinerary:
+            </Typography>
+          </div>
+          <Container style={{ padding: "0px", marginTop: "10px" }}>
             <TextField
               fullWidth
-              placeholder="Full Name"
+              required
+              id="outlined-required"
+              label="Full Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </Container>
-          <Container style={{ marginTop: "10px" }}>
+          <Container style={{ padding: "0px", marginTop: "10px" }}>
             <TextField
               fullWidth
-              placeholder="Email"
+              required
+              id="outlined-required"
+              label="Email"
               value={emailId}
               onChange={(e) => setEmailId(e.target.value)}
             />
           </Container>
 
-          <Container style={{ marginTop: "10px" }}>
+          <Container style={{ padding: "0px", marginTop: "10px" }}>
             <TextField
               fullWidth
-              placeholder="Phone Number"
+              required
+              id="outlined-required"
+              label="Phone Number"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
@@ -138,6 +175,7 @@ const Home: React.FC = () => {
 
           <Container
             style={{
+              padding: "0px",
               marginTop: "10px",
               display: "flex",
               justifyContent: "space-between",
@@ -157,7 +195,13 @@ const Home: React.FC = () => {
             />
           </Container>
 
-          <Container style={{ marginTop: "10px" }}>
+          <Container
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
             <Dropdown
               options={STAGESOPTIONS}
               placeHolder="What stage of planning are you in?"
@@ -167,7 +211,13 @@ const Home: React.FC = () => {
             />
           </Container>
 
-          <Container style={{ marginTop: "10px" }}>
+          <Container
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              marginTop: "10px",
+            }}
+          >
             <Button variant="contained" onClick={click}>
               Submit
             </Button>

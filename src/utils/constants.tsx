@@ -1,4 +1,49 @@
-const PLACES: string[] = ["India", "Germany", "UK", "USA", "Australia"];
+const PLACES: string[] = [
+  "United States",
+  "Canada",
+  "United",
+  "Kingdom",
+  "Australia",
+  "Germany",
+  "France",
+  "Italy",
+  "Spain",
+  "Japan",
+  "China",
+  "India",
+  "Brazil",
+  "Russia",
+  "Mexico",
+  "Argentina",
+  "Chile",
+  "Sweden",
+  "Norway",
+  "Finland",
+  "Denmark",
+  "Netherlands",
+  "Belgium",
+  "Switzerland",
+  "Austria",
+  "Greece",
+  "Turkey",
+  "Egypt",
+  "Israel",
+  "Singapore",
+  "Malaysia",
+  "Thailand",
+  "Indonesia",
+  "Vietnam",
+  "New Zealand",
+  "Ireland",
+  "Poland",
+  "Romania",
+  "Ukraine",
+  "Belarus",
+  "Kazakhstan",
+  "Nigeria",
+  "Kenya",
+  "Egypt",
+];
 
 const INTERESTS: string[] = [
   "Adventures & Outdoors",
@@ -28,7 +73,17 @@ const BUDGETOPTIONS: string[] = [
   "$10000+",
 ];
 
-const WHENOPTIONS: string[] = ["October 2023", "November 2023"];
+const WHENOPTIONS: string[] = [
+  "October 2023",
+  "November 2023",
+  "December 2023",
+  "January 2024",
+  "February 2024",
+  "March 2024",
+  "April 2024",
+  "May 2024",
+  "June 2024",
+];
 
 const STAGESOPTIONS: string[] = [
   "Still dreaming / researching ",
