@@ -60,9 +60,9 @@ function AdminLogin() {
           <Typography variant="h5" mb={2}>
             Trips
           </Typography>
-          <CardContainer>
+          <div style={{display: "flex", flexDirection : "row", flexWrap: "wrap",  justifyContent: "space-evenly", width: "100%"}}>
             {trips.map((trip, index) => (
-              <Card key={index}>
+              <Card style={{ minWidth: "23%", maxWidth: "23%", margin: "10px"}} key={index}>
                 <StyledCardContent>
                   <CardTitleContainer>
                     <div>
@@ -87,7 +87,7 @@ function AdminLogin() {
                 </StyledCardContent>
               </Card>
             ))}
-          </CardContainer>
+          </div>
         </>
       )}
     </Body>

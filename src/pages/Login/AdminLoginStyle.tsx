@@ -2,9 +2,9 @@ import { CardContent, Container, Divider, styled } from "@mui/material";
 
 const CardContainer = styled(Container)({
   display: "flex",
-  flexWrap: "wrap",
-  gap: "20px",
   justifyContent: "space-between",
+  margin: 0,
+  padding: 0
 });
 const StyledCardContent = styled(CardContent)({
   display: "flex",
