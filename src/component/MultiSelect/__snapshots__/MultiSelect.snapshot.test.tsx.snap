@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultiSelect Component should render MultiSelect component correctly 1`] = `
+<div
+  className="MuiFormControl-root css-cquceo-MuiFormControl-root"
+>
+  <label
+    className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiFormLabel-filled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-shrink MuiInputLabel-sizeMedium MuiInputLabel-outlined css-1jy569b-MuiFormLabel-root-MuiInputLabel-root"
+    data-shrink={true}
+  >
+    Select options
+  </label>
+  <div
+    className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+    onClick={[Function]}
+  >
+    <div
+      aria-controls=":r0:"
+      aria-expanded="false"
+      aria-haspopup="listbox"
+      className="MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseDown={[Function]}
+      role="combobox"
+      tabIndex={0}
+    >
+      Option 1
+    </div>
+    <input
+      aria-hidden={true}
+      aria-invalid={false}
+      className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      disabled={false}
+      onAnimationStart={[Function]}
+      onChange={[Function]}
+      required={false}
+      tabIndex={-1}
+      value="Option 1"
+    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
+    <fieldset
+      aria-hidden={true}
+      className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+    >
+      <legend
+        className="css-14lo706"
+      >
+        <span>
+          Select options
+        </span>
+      </legend>
+    </fieldset>
+  </div>
+</div>
+`;
