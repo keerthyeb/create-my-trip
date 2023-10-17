@@ -7,13 +7,12 @@ import theme from "./style/theme";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/AdminLogin";
 
-
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <Routes>
         <Route path="/" element={WithHeader(<Home />)} />
-        <Route path="/login" element={WithHeader(<Login/>)}/>
+        <Route path="/login" element={WithHeader(<Login />)} />
       </Routes>
     </ThemeProvider>
   );

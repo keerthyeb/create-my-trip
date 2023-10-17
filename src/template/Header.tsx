@@ -6,7 +6,10 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <AppBar position="static">
-      <Toolbar sx={{ ml: 2 }} style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <Toolbar
+        sx={{ ml: 2 }}
+        style={{ display: "flex", justifyContent: "space-between" }}
+      >
         <Link to={"/"}>
           <Typography
             variant="h6"
@@ -16,10 +19,11 @@ const Header = () => {
             Enchanting Travels
           </Typography>
         </Link>
-        <Button variant={"contained"} onClick={() => navigate("/login")}>Login</Button>
-
+        <Button variant={"contained"} onClick={() => navigate("/login")}>
+          Login
+        </Button>
       </Toolbar>
-    </AppBar >
+    </AppBar>
   );
 };
 
