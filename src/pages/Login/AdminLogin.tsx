@@ -20,7 +20,8 @@ function AdminLogin() {
 
   const loginHandler = () => {
     setDisplayTrips(true);
-    getFromLocalStorage(setTrips);
+    const tripDetails = getFromLocalStorage();
+    setTrips(JSON.parse(tripDetails));
   };
 
   return (
@@ -80,10 +81,8 @@ function AdminLogin() {
   );
 }
 
-function getFromLocalStorage(
-  setTrips: (value: ((prevState: []) => []) | []) => void,
-) {
-  const json = localStorage.getItem("bookings") || "[]";
-  setTrips(JSON.parse(json));
+function getFromLocalStorage() {
+  return localStorage.getItem("bookings") || "[]";
 }
+
 export default AdminLogin;
