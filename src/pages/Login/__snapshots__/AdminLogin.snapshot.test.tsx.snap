@@ -6,9 +6,19 @@ exports[`AdminLogin component matches snapshot 1`] = `
     class="css-1r3ldka"
   >
     <div
-      style="margin-top: 17%;"
+      style="margin-top: 8%;"
     />
-    <div>
+    <div
+      style="display: flex; height: 60vh; flex-direction: column; align-items: center; justify-content: center; width: 40vh; padding: 20px; border: 1px solid #ccc; border-radius: 5px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); background-color: white;"
+    >
+      <h2
+        style="font-size: 24px; font-weight: bold; margin-bottom: 20px;"
+      >
+        Login
+      </h2>
+      <div
+        style="width: 35%; height: 1px; background-color: lightgray; margin-bottom: 20px;"
+      />
       <div
         style="margin: 5px; background: white;"
       >

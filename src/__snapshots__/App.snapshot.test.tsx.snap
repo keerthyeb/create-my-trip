@@ -90,301 +90,269 @@ exports[`App renders app 1`] = `
       }
     >
       <div
-        style={
-          {
-            "background": "white",
-          }
-        }
+        className="MuiFormControl-root css-cquceo-MuiFormControl-root"
       >
-        <div
-          className="MuiFormControl-root css-cquceo-MuiFormControl-root"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={false}
         >
-          <label
-            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink={false}
-          >
-            Where do you want to go?
-          </label>
+          Where do you want to go?
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
           <div
-            className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
-            onClick={[Function]}
+            aria-controls=":r0:"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={0}
           >
-            <div
-              aria-controls=":r0:"
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              className="MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="combobox"
-              tabIndex={0}
+            <span
+              className="notranslate"
             >
-              <span
-                className="notranslate"
-              >
-                ​
-              </span>
-            </div>
-            <input
-              aria-hidden={true}
-              aria-invalid={false}
-              className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
-              disabled={false}
-              onAnimationStart={[Function]}
-              onChange={[Function]}
-              required={false}
-              tabIndex={-1}
-              value=""
-            />
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
-              data-testid="ArrowDropDownIcon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-            <fieldset
-              aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-            >
-              <legend
-                className="css-yjsfm1"
-              >
-                <span>
-                  Where do you want to go?
-                </span>
-              </legend>
-            </fieldset>
+              ​
+            </span>
           </div>
+          <input
+            aria-hidden={true}
+            aria-invalid={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            required={false}
+            tabIndex={-1}
+            value=""
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-yjsfm1"
+            >
+              <span>
+                Where do you want to go?
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
       <div
-        style={
-          {
-            "background": "white",
-          }
-        }
+        className="MuiFormControl-root css-cquceo-MuiFormControl-root"
       >
-        <div
-          className="MuiFormControl-root css-cquceo-MuiFormControl-root"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={false}
         >
-          <label
-            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink={false}
-          >
-            Your Interests?
-          </label>
+          Your Interests?
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
           <div
-            className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
-            onClick={[Function]}
+            aria-controls=":r1:"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={0}
           >
-            <div
-              aria-controls=":r1:"
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              className="MuiSelect-select MuiSelect-outlined MuiSelect-multiple MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="combobox"
-              tabIndex={0}
+            <span
+              className="notranslate"
             >
-              <span
-                className="notranslate"
-              >
-                ​
-              </span>
-            </div>
-            <input
-              aria-hidden={true}
-              aria-invalid={false}
-              className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
-              disabled={false}
-              onAnimationStart={[Function]}
-              onChange={[Function]}
-              required={false}
-              tabIndex={-1}
-              value=""
-            />
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
-              data-testid="ArrowDropDownIcon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-            <fieldset
-              aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-            >
-              <legend
-                className="css-yjsfm1"
-              >
-                <span>
-                  Your Interests?
-                </span>
-              </legend>
-            </fieldset>
+              ​
+            </span>
           </div>
+          <input
+            aria-hidden={true}
+            aria-invalid={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            required={false}
+            tabIndex={-1}
+            value=""
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-yjsfm1"
+            >
+              <span>
+                Your Interests?
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
       <div
-        style={
-          {
-            "background": "white",
-          }
-        }
+        className="MuiFormControl-root css-cquceo-MuiFormControl-root"
       >
-        <div
-          className="MuiFormControl-root css-cquceo-MuiFormControl-root"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={false}
         >
-          <label
-            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink={false}
-          >
-            No. of travelers
-          </label>
+          No. of travelers
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
           <div
-            className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
-            onClick={[Function]}
+            aria-controls=":r2:"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={0}
           >
-            <div
-              aria-controls=":r2:"
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="combobox"
-              tabIndex={0}
+            <span
+              className="notranslate"
             >
-              <span
-                className="notranslate"
-              >
-                ​
-              </span>
-            </div>
-            <input
-              aria-hidden={true}
-              aria-invalid={false}
-              className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
-              disabled={false}
-              onAnimationStart={[Function]}
-              onChange={[Function]}
-              required={false}
-              tabIndex={-1}
-            />
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
-              data-testid="ArrowDropDownIcon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-            <fieldset
-              aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-            >
-              <legend
-                className="css-yjsfm1"
-              >
-                <span>
-                  No. of travelers
-                </span>
-              </legend>
-            </fieldset>
+              ​
+            </span>
           </div>
+          <input
+            aria-hidden={true}
+            aria-invalid={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            required={false}
+            tabIndex={-1}
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-yjsfm1"
+            >
+              <span>
+                No. of travelers
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
       <div
-        style={
-          {
-            "background": "white",
-          }
-        }
+        className="MuiFormControl-root css-cquceo-MuiFormControl-root"
       >
-        <div
-          className="MuiFormControl-root css-cquceo-MuiFormControl-root"
+        <label
+          className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
+          data-shrink={false}
         >
-          <label
-            className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-tv7iap-MuiFormLabel-root-MuiInputLabel-root"
-            data-shrink={false}
-          >
-            Budget Per Person
-          </label>
+          Budget Per Person
+        </label>
+        <div
+          className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
+          onClick={[Function]}
+        >
           <div
-            className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1x8n7yp-MuiInputBase-root-MuiOutlinedInput-root"
-            onClick={[Function]}
+            aria-controls=":r3:"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            role="combobox"
+            tabIndex={0}
           >
-            <div
-              aria-controls=":r3:"
-              aria-expanded="false"
-              aria-haspopup="listbox"
-              className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
-              onBlur={[Function]}
-              onFocus={[Function]}
-              onKeyDown={[Function]}
-              onMouseDown={[Function]}
-              role="combobox"
-              tabIndex={0}
+            <span
+              className="notranslate"
             >
-              <span
-                className="notranslate"
-              >
-                ​
-              </span>
-            </div>
-            <input
-              aria-hidden={true}
-              aria-invalid={false}
-              className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
-              disabled={false}
-              onAnimationStart={[Function]}
-              onChange={[Function]}
-              required={false}
-              tabIndex={-1}
-            />
-            <svg
-              aria-hidden={true}
-              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
-              data-testid="ArrowDropDownIcon"
-              focusable="false"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M7 10l5 5 5-5z"
-              />
-            </svg>
-            <fieldset
-              aria-hidden={true}
-              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
-            >
-              <legend
-                className="css-yjsfm1"
-              >
-                <span>
-                  Budget Per Person
-                </span>
-              </legend>
-            </fieldset>
+              ​
+            </span>
           </div>
+          <input
+            aria-hidden={true}
+            aria-invalid={false}
+            className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+            disabled={false}
+            onAnimationStart={[Function]}
+            onChange={[Function]}
+            required={false}
+            tabIndex={-1}
+          />
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+            data-testid="ArrowDropDownIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 10l5 5 5-5z"
+            />
+          </svg>
+          <fieldset
+            aria-hidden={true}
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              className="css-yjsfm1"
+            >
+              <span>
+                Budget Per Person
+              </span>
+            </legend>
+          </fieldset>
         </div>
       </div>
     </div>

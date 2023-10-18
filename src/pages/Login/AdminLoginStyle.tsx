@@ -25,9 +25,9 @@ const styles = {
     fontSize: '25px',
   },
   card: {
-    minWidth: '23%',
     minHeight: '45vh',
-    maxWidth: '23%',
+    maxWidth: '40vh',
+    minWidth: '40vh',
     margin: '13px',
     display: 'flex',
     background: 'rgb(235 226 226 / 4%)',
