@@ -55,7 +55,7 @@ exports[`App renders app 1`] = `
     <div
       style={
         {
-          "marginBlockEnd": "17%",
+          "marginTop": "17%",
         }
       }
     />
@@ -93,7 +93,6 @@ exports[`App renders app 1`] = `
         style={
           {
             "background": "white",
-            "display": "flex",
           }
         }
       >
@@ -169,7 +168,6 @@ exports[`App renders app 1`] = `
         style={
           {
             "background": "white",
-            "display": "flex",
           }
         }
       >
@@ -245,7 +243,6 @@ exports[`App renders app 1`] = `
         style={
           {
             "background": "white",
-            "display": "flex",
           }
         }
       >
@@ -320,7 +317,6 @@ exports[`App renders app 1`] = `
         style={
           {
             "background": "white",
-            "display": "flex",
           }
         }
       >
