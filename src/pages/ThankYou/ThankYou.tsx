@@ -1,5 +1,5 @@
 import { Container, Typography } from '@mui/material';
-import Body from '../../template/Body';
+import Body from '../../Layout/Body';
 import { fontFamily, headerDiv, thankYou } from './thankYouStyle';
 import { THANK_YOU } from '../../utils/constants';
 

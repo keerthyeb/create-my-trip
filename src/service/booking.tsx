@@ -1,4 +1,4 @@
-import { TripDetails } from '../Model/TripDetails';
+import { TripDetails } from '../Types/TripDetails';
 const saveTripDetails = (tripDetails: TripDetails) => {
   const bookings = JSON.parse(localStorage.getItem('bookings') || '[]');
   bookings.push(tripDetails);

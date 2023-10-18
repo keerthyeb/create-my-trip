@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import { Button, Container, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import Body from '../../template/Body';
+import Body from '../../Layout/Body';
 import {
   BUDGETOPTIONS,
   HEADER_CONTENT_1,
@@ -30,7 +30,7 @@ import {
 } from '../../utils/constants';
 import MultiSelect from '../../component/Dropdown/MultiSelect/MultiSelect';
 import Dropdown from '../../component/Dropdown/SingleSelect/Dropdown';
-import { TripDetails } from '../../Model/TripDetails';
+import { TripDetails } from '../../Types/TripDetails';
 import {
   modalStyle,
   displayFlex,

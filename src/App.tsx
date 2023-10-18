@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { ThemeProvider } from '@emotion/react';
 import { Route, Routes } from 'react-router-dom';
-import WithHeader from './template/WithHeader';
+import WithHeader from './Layout/WithHeader';
 import theme from './style/theme';
 import Home from './pages/Home/Home';
 import Login from './pages/Login/AdminLogin';
