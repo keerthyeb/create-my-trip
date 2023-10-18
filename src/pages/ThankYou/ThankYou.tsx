@@ -9,10 +9,16 @@ function ThankYou() {
       <Container>
         <div style={headerDiv}></div>;
         <div style={thankYou}>
-          <Typography style={fontFamily} variant="h4">{THANK_YOU.note}</Typography>
+          <Typography style={fontFamily} variant="h4">
+            {THANK_YOU.note}
+          </Typography>
           <div>
-            <Typography style={fontFamily} variant="h5">{THANK_YOU.sincerely}</Typography>
-            <Typography style={fontFamily} variant="h5">{THANK_YOU.travels}</Typography>
+            <Typography style={fontFamily} variant="h5">
+              {THANK_YOU.sincerely}
+            </Typography>
+            <Typography style={fontFamily} variant="h5">
+              {THANK_YOU.travels}
+            </Typography>
           </div>
         </div>
       </Container>

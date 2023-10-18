@@ -6,10 +6,10 @@ const saveTripDetails = (tripDetails: TripDetails) => {
 };
 const validateCredentials = (username: string, password: string) => {
   return username === 'admin' && password == '1234';
-}
+};
 
 function getTripDetails() {
   return localStorage.getItem('bookings') || '[]';
 }
 
-export { saveTripDetails, validateCredentials, getTripDetails};
+export { saveTripDetails, validateCredentials, getTripDetails };

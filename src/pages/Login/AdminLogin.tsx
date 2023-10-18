@@ -31,61 +31,71 @@ function AdminLogin() {
   }
 
   function renderLoginDiv() {
-    return <div style={loginContainer}>
-      <h2 style={styles.header}>Login</h2>
-      <div style={styles.line}></div>
-      <div style={styles.textField}>
-        <TextField placeholder={LOGIN.userName} value={username} onChange={(event) => setUsername(event.target.value)} />
+    return (
+      <div style={loginContainer}>
+        <h2 style={styles.header}>Login</h2>
+        <div style={styles.line}></div>
+        <div style={styles.textField}>
+          <TextField placeholder={LOGIN.userName} value={username} onChange={(event) => setUsername(event.target.value)} />
+        </div>
+        <div style={styles.textField}>
+          <TextField
+            type="password"
+            placeholder={LOGIN.password}
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
+        <div style={styles.button}>
+          <Button variant="contained" onClick={loginHandler}>
+            {LOGIN.login}
+          </Button>
+        </div>
       </div>
-      <div style={styles.textField}>
-        <TextField
-          type="password"
-          placeholder={LOGIN.password}
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-      </div>
-      <div style={styles.button}><Button variant="contained" onClick={loginHandler}>{LOGIN.login}</Button></div>
-    </div>;
+    );
   }
 
   function renderHeader() {
-    return <Typography variant="h5" mb={2}>{LOGIN.trips}</Typography>;
+    return (
+      <Typography variant="h5" mb={2}>
+        {LOGIN.trips}
+      </Typography>
+    );
   }
 
   function renderCard(index: number, trip: TripDetails) {
-    return <Card style={styles.card} key={index}>
-      <Container style={container}>
-        <div>
-          <Typography variant="h4">{trip.name}</Typography>
-          <Typography>{trip.emailId}</Typography>
-          <div style={{ display: 'flex' }}>
-            <Call />
-            <Typography>{trip.phoneNumber.toString()}</Typography>
+    return (
+      <Card style={styles.card} key={index}>
+        <Container style={container}>
+          <div>
+            <Typography variant="h4">{trip.name}</Typography>
+            <Typography>{trip.emailId}</Typography>
+            <div style={{ display: 'flex' }}>
+              <Call />
+              <Typography>{trip.phoneNumber.toString()}</Typography>
+            </div>
           </div>
-        </div>
-        <div>
-          <Typography style={styles.fond25}>
-            <LocationOn></LocationOn>
-            {trip.destinations.join(', ')}
-          </Typography>
-          <Typography style={styles.fond18}>Interests: {trip.interests}</Typography>
-          <Typography style={styles.fond18}>Date: {trip.date}</Typography>
-        </div>
-        <div>
-          <Typography>Duration: {trip.duration.toString()} Days</Typography>
-          <Typography>No of People: {trip.travellersCount.toString()}</Typography>
-          <Typography>Expected Budget: {trip.budget}</Typography>
-          <Typography>Stage: {trip.stageOfTrip}</Typography>
-        </div>
-      </Container>
-    </Card>;
+          <div>
+            <Typography style={styles.fond25}>
+              <LocationOn></LocationOn>
+              {trip.destinations.join(', ')}
+            </Typography>
+            <Typography style={styles.fond18}>Interests: {trip.interests}</Typography>
+            <Typography style={styles.fond18}>Date: {trip.date}</Typography>
+          </div>
+          <div>
+            <Typography>Duration: {trip.duration.toString()} Days</Typography>
+            <Typography>No of People: {trip.travellersCount.toString()}</Typography>
+            <Typography>Expected Budget: {trip.budget}</Typography>
+            <Typography>Stage: {trip.stageOfTrip}</Typography>
+          </div>
+        </Container>
+      </Card>
+    );
   }
 
   function renderCardDetails() {
-    return <div style={tripContainer}>
-      {trips.map((trip, index) => renderCard(index, trip))}
-    </div>;
+    return <div style={tripContainer}>{trips.map((trip, index) => renderCard(index, trip))}</div>;
   }
 
   return (

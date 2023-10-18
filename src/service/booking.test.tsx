@@ -1,4 +1,4 @@
-import { getTripDetails, saveTripDetails, validateCredentials } from "./booking";
+import { getTripDetails, saveTripDetails, validateCredentials } from './booking';
 
 describe('Admin Functions', () => {
   const testTripDetails = {
@@ -11,7 +11,7 @@ describe('Admin Functions', () => {
     phoneNumber: '1234567890',
     duration: '7',
     date: '2023-10-20',
-    stageOfTrip: 'Planning'
+    stageOfTrip: 'Planning',
   };
 
   it('should save trip details to local storage', () => {

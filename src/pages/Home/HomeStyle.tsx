@@ -3,8 +3,8 @@ const modalStyle = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: "50vh",
-  height: "60vh",
+  width: '50vh',
+  height: '60vh',
   bgcolor: 'background.paper',
   boxShadow: 23,
   border: '2px solid #1664a5',
@@ -27,7 +27,7 @@ const headerStyles: any = {
 };
 
 const displayFlex = {
-  display: 'flex'
+  display: 'flex',
 };
 
 const whiteBackground = {

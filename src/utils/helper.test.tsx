@@ -1,4 +1,4 @@
-import { isValid } from "./helper";
+import { isValid } from './helper';
 
 describe('Validation Function', () => {
   it('should return true for valid inputs', () => {
