@@ -5,14 +5,14 @@ import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Body from '../../Layout/Body';
 import {
-  BUDGETOPTIONS,
+  BUDGET_OPTIONS,
   HEADER_CONTENT_1,
   HEADER_CONTENT_2,
   INTERESTS,
   PLACES,
-  STAGESOPTIONS,
-  TRAVELSIZE,
-  WHENOPTIONS,
+  STAGES_OPTIONS,
+  TRAVEL_SIZE,
+  WHEN_OPTIONS,
   PLACEHOLDER_1,
   PLACEHOLDER_2,
   PLACEHOLDER_3,
@@ -24,7 +24,7 @@ import {
   POP_UP_LABEL_3,
   TRIP_DURATION_PLACE_HOLDER,
   TIME_PLACE_HOLDER,
-  STAGE_PALCEHOLDER,
+  STAGE_PLACE_HOLDER,
   SUBMIT_BUTTON,
   CREATE_MY_TRIP_NOW,
 } from '../../utils/constants';
@@ -129,7 +129,7 @@ const Home: React.FC = () => {
           onChangeHandler={OnChangeHandler()}
         />
         <Dropdown
-          options={TRAVELSIZE}
+          options={TRAVEL_SIZE}
           placeHolder={PLACEHOLDER_3}
           onChangeHandler={(
             e: React.ChangeEvent<{
@@ -138,7 +138,7 @@ const Home: React.FC = () => {
           ) => setTravellersCount(e.target.value as number)}
         />
         <Dropdown
-          options={BUDGETOPTIONS}
+          options={BUDGET_OPTIONS}
           placeHolder={PLACEHOLDER_4}
           onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setBudget(e.target.value as number)}
         />
@@ -196,15 +196,15 @@ const Home: React.FC = () => {
           <Container style={tripDurationStyle}>
             <TextField placeholder={TRIP_DURATION_PLACE_HOLDER} value={duration} onChange={(e) => setDuration(e.target.value)} />
             <Dropdown
-              options={WHENOPTIONS}
+              options={WHEN_OPTIONS}
               placeHolder={TIME_PLACE_HOLDER}
               onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setDate(e.target.value as string)}
             />
           </Container>
           <Container style={stageOptionStyle}>
             <Dropdown
-              options={STAGESOPTIONS}
-              placeHolder={STAGE_PALCEHOLDER}
+              options={STAGES_OPTIONS}
+              placeHolder={STAGE_PLACE_HOLDER}
               onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setStageOfTrip(e.target.value as string)}
             />
           </Container>

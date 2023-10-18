@@ -29,7 +29,7 @@ const INTERESTS: string[] = [
   'Beaches',
 ];
 
-const TRAVELSIZE: string[] = [
+const TRAVEL_SIZE: string[] = [
   '1 traveler',
   '2 travelers',
   '3 travelers',
@@ -39,9 +39,9 @@ const TRAVELSIZE: string[] = [
   '6+ travelers',
 ];
 
-const BUDGETOPTIONS: string[] = ['$4000 - $5000', '$5000-$6000', '$6000-$7000', '$7000-$8000', '$8000-$10000', '$10000+'];
+const BUDGET_OPTIONS: string[] = ['$4000 - $5000', '$5000-$6000', '$6000-$7000', '$7000-$8000', '$8000-$10000', '$10000+'];
 
-const WHENOPTIONS: string[] = [
+const WHEN_OPTIONS: string[] = [
   'October 2023',
   'November 2023',
   'December 2023',
@@ -53,7 +53,7 @@ const WHENOPTIONS: string[] = [
   'June 2024',
 ];
 
-const STAGESOPTIONS: string[] = [
+const STAGES_OPTIONS: string[] = [
   'Still dreaming / researching ',
   'Definitely travelling, need destination expertise',
   'I want to book a trip',
@@ -83,7 +83,7 @@ const POP_UP_LABEL_3: string = 'Phone Number';
 
 const TRIP_DURATION_PLACE_HOLDER: string = 'Trip Duration (Days)';
 const TIME_PLACE_HOLDER = 'When';
-const STAGE_PALCEHOLDER = 'What stage of planning are you in?';
+const STAGE_PLACE_HOLDER = 'What stage of planning are you in?';
 const SUBMIT_BUTTON = 'Submit';
 
 const LOGIN = {
@@ -102,7 +102,7 @@ const THANK_YOU = {
 export {
   PLACES,
   INTERESTS,
-  TRAVELSIZE,
+  TRAVEL_SIZE,
   PLACEHOLDER_1,
   PLACEHOLDER_2,
   PLACEHOLDER_3,
@@ -114,14 +114,14 @@ export {
   POP_UP_LABEL_1,
   POP_UP_LABEL_2,
   POP_UP_LABEL_3,
-  BUDGETOPTIONS,
-  WHENOPTIONS,
+  BUDGET_OPTIONS,
+  WHEN_OPTIONS,
   LOGIN,
   THANK_YOU,
-  STAGESOPTIONS,
+  STAGES_OPTIONS,
   HEADER_CONTENT_1,
   HEADER_CONTENT_2,
   CREATE_MY_TRIP_NOW,
-  STAGE_PALCEHOLDER,
+  STAGE_PLACE_HOLDER,
   SUBMIT_BUTTON,
 };
