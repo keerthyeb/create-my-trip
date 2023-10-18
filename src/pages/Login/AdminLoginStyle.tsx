@@ -18,10 +18,10 @@ const styles = {
     fontWeight: 'bold',
     marginBottom: '20px',
   },
-  fond18: {
+  font18: {
     fontSize: '18px',
   },
-  fond25: {
+  font25: {
     fontSize: '25px',
   },
   card: {

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Card, Container, Typography } from '@mui/material';
 import Body from '../../Layout/Body';
 import { TripDetails } from '../../Types/TripDetails';
-import { Call, LocationOn } from '@mui/icons-material';
+import { Call, LocationOn, People } from '@mui/icons-material';
 import { container, headerDiv, loginContainer, styles, tripContainer } from './AdminLoginStyle';
 import { getTripDetails, validateCredentials } from '../../service/booking';
 import { LOGIN } from '../../utils/constants';
@@ -57,7 +57,7 @@ function AdminLogin() {
 
   function renderHeader() {
     return (
-      <Typography variant="h5" mb={2}>
+      <Typography style={{ fontSize: '40px' }} variant="h5" mb={2}>
         {LOGIN.trips}
       </Typography>
     );
@@ -76,17 +76,20 @@ function AdminLogin() {
             </div>
           </div>
           <div>
-            <Typography style={styles.fond25}>
-              <LocationOn></LocationOn>
-              {trip.destinations.join(', ')}
-            </Typography>
-            <Typography style={styles.fond18}>Interests: {trip.interests}</Typography>
-            <Typography style={styles.fond18}>Date: {trip.date}</Typography>
+            <div style={{ display: 'flex' }}>
+              <LocationOn style={{ marginTop: '7px' }} />
+              <Typography style={styles.font25}>{trip.destinations.join(', ')}</Typography>
+            </div>
+            <Typography style={styles.font18}>Interests: {trip.interests}</Typography>
+            <Typography style={styles.font18}>Date: {trip.date}</Typography>
           </div>
           <div>
+            <div style={{ display: 'flex' }}>
+              <People />
+              <Typography style={{ marginLeft: '5px' }}>{trip.travellersCount.toString()}</Typography>
+            </div>
             <Typography>Duration: {trip.duration.toString()} Days</Typography>
-            <Typography>No of People: {trip.travellersCount.toString()}</Typography>
-            <Typography>Expected Budget: {trip.budget}</Typography>
+            <Typography>Budget: {trip.budget}</Typography>
             <Typography>Stage: {trip.stageOfTrip}</Typography>
           </div>
         </Container>
