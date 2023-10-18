@@ -7,7 +7,7 @@ const modalStyle = {
   height: "60vh",
   bgcolor: 'background.paper',
   boxShadow: 23,
-  border: '1px solid #95a1ab',
+  border: '2px solid #1664a5',
   borderRadius: '10px',
   display: 'flex',
   flexDirection: 'column',
@@ -27,7 +27,7 @@ const headerStyles: any = {
 };
 
 const displayFlex = {
-  display: 'flex',
+  display: 'flex'
 };
 
 const whiteBackground = {

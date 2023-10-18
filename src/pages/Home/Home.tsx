@@ -36,7 +36,6 @@ import {
   displayFlex,
   headerDiv,
   headerStyles,
-  whiteBackground,
   popUpFieldStyle,
   tripDurationStyle,
   stageOptionStyle,
@@ -117,40 +116,32 @@ const Home: React.FC = () => {
   function renderOptions() {
     return (
       <Container style={displayFlex}>
-        <div style={whiteBackground}>
-          <MultiSelect
-            options={PLACES}
-            placeHolder={PLACEHOLDER_1}
-            selectedItems={selectedDestinations}
-            onChangeHandler={handleChange}
-          />
-        </div>
-        <div style={whiteBackground}>
-          <MultiSelect
-            options={INTERESTS}
-            placeHolder={PLACEHOLDER_2}
-            selectedItems={selectedInterests}
-            onChangeHandler={OnChangeHandler()}
-          />
-        </div>
-        <div style={whiteBackground}>
-          <Dropdown
-            options={TRAVELSIZE}
-            placeHolder={PLACEHOLDER_3}
-            onChangeHandler={(
-              e: React.ChangeEvent<{
-                value: unknown;
-              }>,
-            ) => setTravellersCount(e.target.value as number)}
-          />
-        </div>
-        <div style={whiteBackground}>
-          <Dropdown
-            options={BUDGETOPTIONS}
-            placeHolder={PLACEHOLDER_4}
-            onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setBudget(e.target.value as number)}
-          />
-        </div>
+        <MultiSelect
+          options={PLACES}
+          placeHolder={PLACEHOLDER_1}
+          selectedItems={selectedDestinations}
+          onChangeHandler={handleChange}
+        />
+        <MultiSelect
+          options={INTERESTS}
+          placeHolder={PLACEHOLDER_2}
+          selectedItems={selectedInterests}
+          onChangeHandler={OnChangeHandler()}
+        />
+        <Dropdown
+          options={TRAVELSIZE}
+          placeHolder={PLACEHOLDER_3}
+          onChangeHandler={(
+            e: React.ChangeEvent<{
+              value: unknown;
+            }>,
+          ) => setTravellersCount(e.target.value as number)}
+        />
+        <Dropdown
+          options={BUDGETOPTIONS}
+          placeHolder={PLACEHOLDER_4}
+          onChangeHandler={(e: React.ChangeEvent<{ value: unknown }>) => setBudget(e.target.value as number)}
+        />
       </Container>
     );
   }
