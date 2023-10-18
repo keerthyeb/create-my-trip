@@ -86,6 +86,19 @@ const TIME_PLACE_HOLDER = 'When';
 const STAGE_PALCEHOLDER = 'What stage of planning are you in?';
 const SUBMIT_BUTTON = 'Submit';
 
+const LOGIN = {
+  userName: "Username",
+  password: "Password",
+  login: "Login",
+  trips: "Trips"
+}
+
+const THANK_YOU = {
+  note: "Thank you for inquiring about your trip of a lifetime with us. Our team of experts will be in touch soon to help craft the perfect vacation for you.",
+  sincerely: "Sincerely,",
+  travels : "Enchanting Travels"
+}
+
 export {
   PLACES,
   INTERESTS,
@@ -103,6 +116,8 @@ export {
   POP_UP_LABEL_3,
   BUDGETOPTIONS,
   WHENOPTIONS,
+  LOGIN,
+  THANK_YOU,
   STAGESOPTIONS,
   HEADER_CONTENT_1,
   HEADER_CONTENT_2,
