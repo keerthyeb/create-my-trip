@@ -4,5 +4,12 @@ const saveTripDetails = (tripDetails: TripDetails) => {
   bookings.push(tripDetails);
   localStorage.setItem('bookings', JSON.stringify(bookings));
 };
+const validateCredentials = (username: string, password: string) => {
+  return username === 'admin' && password == '1234';
+}
 
-export { saveTripDetails };
+function getTripDetails() {
+  return localStorage.getItem('bookings') || '[]';
+}
+
+export { saveTripDetails, validateCredentials, getTripDetails};

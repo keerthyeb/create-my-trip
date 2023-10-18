@@ -5,6 +5,10 @@ import { Card, Container, Typography } from '@mui/material';
 import Body from '../../template/Body';
 import { TripDetails } from '../../Model/TripDetails';
 import { Call, LocationOn } from '@mui/icons-material';
+import { container, headerDiv, loginContainer, styles, tripContainer } from './AdminLoginStyle';
+import { getTripDetails, validateCredentials } from '../../service/booking';
+import { LOGIN } from '../../utils/constants';
+
 function AdminLogin() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -13,111 +17,93 @@ function AdminLogin() {
   const [displayTrips, setDisplayTrips] = useState(false);
 
   const loginHandler = () => {
-    if (username === 'admin' && password == '1234') {
+    if (validateCredentials(username, password)) {
       setDisplayTrips(true);
-      const tripDetails = getFromLocalStorage();
+      const tripDetails = getTripDetails();
       setTrips(JSON.parse(tripDetails));
       return;
     }
     alert('Invalid Credentials');
   };
 
+  function renderHeaderDiv() {
+    return <div style={headerDiv}></div>;
+  }
+
+  function renderLoginDiv() {
+    return <div style={loginContainer}>
+      <h2 style={styles.header}>Login</h2>
+      <div style={styles.line}></div>
+      <div style={styles.textField}>
+        <TextField placeholder={LOGIN.userName} value={username} onChange={(event) => setUsername(event.target.value)} />
+      </div>
+      <div style={styles.textField}>
+        <TextField
+          type="password"
+          placeholder={LOGIN.password}
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}
+        />
+      </div>
+      <div style={styles.button}><Button variant="contained" onClick={loginHandler}>{LOGIN.login}</Button></div>
+    </div>;
+  }
+
+  function renderHeader() {
+    return <Typography variant="h5" mb={2}>{LOGIN.trips}</Typography>;
+  }
+
+  function renderCard(index: number, trip: TripDetails) {
+    return <Card style={styles.card} key={index}>
+      <Container style={container}>
+        <div>
+          <Typography variant="h4">{trip.name}</Typography>
+          <Typography>{trip.emailId}</Typography>
+          <div style={{ display: 'flex' }}>
+            <Call />
+            <Typography>{trip.phoneNumber.toString()}</Typography>
+          </div>
+        </div>
+        <div>
+          <Typography style={styles.fond25}>
+            <LocationOn></LocationOn>
+            {trip.destinations.join(', ')}
+          </Typography>
+          <Typography style={styles.fond18}>Interests: {trip.interests}</Typography>
+          <Typography style={styles.fond18}>Date: {trip.date}</Typography>
+        </div>
+        <div>
+          <Typography>Duration: {trip.duration.toString()} Days</Typography>
+          <Typography>No of People: {trip.travellersCount.toString()}</Typography>
+          <Typography>Expected Budget: {trip.budget}</Typography>
+          <Typography>Stage: {trip.stageOfTrip}</Typography>
+        </div>
+      </Container>
+    </Card>;
+  }
+
+  function renderCardDetails() {
+    return <div style={tripContainer}>
+      {trips.map((trip, index) => renderCard(index, trip))}
+    </div>;
+  }
+
   return (
     <Body>
       {!displayTrips && (
         <>
-          <div style={{ marginBlockEnd: '17%' }}></div>
-          <div style={{ margin: '5px', background: 'white' }}>
-            <TextField placeholder="Username" value={username} onChange={(event) => setUsername(event.target.value)} />
-          </div>
-          <div style={{ margin: '5px', background: 'white' }}>
-            <TextField
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </div>
-          <div style={{ margin: '5px' }}>
-            <Button variant="contained" onClick={loginHandler}>
-              Login
-            </Button>
-          </div>
+          {renderHeaderDiv()}
+          {renderLoginDiv()}
         </>
       )}
       {displayTrips && (
         <>
-          <Typography variant="h5" mb={2}>
-            Trips
-          </Typography>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              justifyContent: 'space-evenly',
-              width: '100%',
-            }}
-          >
-            {trips.map((trip, index) => (
-              <Card
-                style={{
-                  minWidth: '23%',
-                  minHeight: '45vh',
-                  maxWidth: '23%',
-                  margin: '13px',
-                  // borderRadius: "14px",
-                  display: 'flex',
-                  background: 'rgb(235 226 226 / 4%)',
-                  borderRadius: '10px',
-                  transition: 'border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-
-                  boxShadow: 'inset 0 -3em 3em rgba(0,0,0,0.1), 0 0  0 2px rgb(190, 190, 190), 0.3em 0.3em 1em rgba(0,0,0,0.3)',
-                }}
-                key={index}
-              >
-                <Container
-                  style={{
-                    padding: '10px 10px 10px 40px',
-                    display: 'flex',
-                    justifyContent: 'space-evenly',
-                    flexDirection: 'column',
-                  }}
-                >
-                  <div>
-                    <Typography variant="h4">{trip.name}</Typography>
-                    <Typography>{trip.emailId}</Typography>
-                    <div style={{ display: 'flex' }}>
-                      <Call />
-                      <Typography>{trip.phoneNumber.toString()}</Typography>
-                    </div>
-                  </div>
-                  <div>
-                    <Typography style={{ fontSize: '25px' }}>
-                      <LocationOn></LocationOn>
-                      {trip.destinations.join(', ')}
-                    </Typography>
-                    <Typography style={{ fontSize: '18px' }}>Interests: {trip.interests}</Typography>
-                    <Typography style={{ fontSize: '18px' }}>Date: {trip.date}</Typography>
-                  </div>
-                  <div>
-                    <Typography>Duration: {trip.duration.toString()} Days</Typography>
-                    <Typography>No of People: {trip.travellersCount.toString()}</Typography>
-                    <Typography>Expected Budget: {trip.budget}</Typography>
-                    <Typography>Stage: {trip.stageOfTrip}</Typography>
-                  </div>
-                </Container>
-              </Card>
-            ))}
-          </div>
+          {renderHeader()}
+          {renderCardDetails()}
         </>
       )}
     </Body>
   );
-}
-
-function getFromLocalStorage() {
-  return localStorage.getItem('bookings') || '[]';
 }
 
 export default AdminLogin;
